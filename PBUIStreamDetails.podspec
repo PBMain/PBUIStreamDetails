@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'PBUIStreamDetails'
-  s.version          = '1.0.15'
+  s.version          = '1.0.15.1'
   s.summary          = 'Pod used to show Stream Details in Photo Butler apps.'
   
   s.description      = <<-DESC
@@ -28,5 +28,6 @@ Pod::Spec.new do |s|
   s.dependency "PBServices"
   s.dependency "PBAnalytics"
   s.dependency "AFNetworking"
+  s.dependency "TOCropViewController"
   
 end
