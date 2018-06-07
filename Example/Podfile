@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'PBUIStreamDetails_Example' do
+  pod 'PBUIStreamDetails', :path => '../'
+
+  target 'PBUIStreamDetails_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end

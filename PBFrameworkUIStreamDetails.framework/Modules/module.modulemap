@@ -1,0 +1,6 @@
+framework module PBFrameworkUIStreamDetails {
+  umbrella header "PBFrameworkUIStreamDetails.h"
+
+  export *
+  module * { export * }
+}
