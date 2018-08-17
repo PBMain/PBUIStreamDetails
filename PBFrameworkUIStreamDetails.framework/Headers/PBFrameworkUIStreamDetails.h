@@ -81,7 +81,7 @@ FOUNDATION_EXPORT const unsigned char PBFrameworkUIStreamDetailsVersionString[];
 #import <PBFrameworkUIStreamDetails/FakeSectionHeaderCell.h>;
 #import <PBFrameworkUIStreamDetails/BasicPhotoListViewController.h>;
 #import <PBFrameworkUIStreamDetails/BibSearchViewController.h>;
-#import <PBFrameworkUIStreamDetails/PMCRiderData.h>;
+#import <PBFrameworkUIStreamDetails/PMCRidersData.h>;
 #import <PBFrameworkUIStreamDetails/BibSearchResultsViewController.h>;
 #import <PBFrameworkUIStreamDetails/BibSearchViewController.h>;
 #import <PBFrameworkUIStreamDetails/BibSearchCell.h>;
