@@ -11,4 +11,13 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgManual;
 @property (nonatomic) NSInteger currentSelection;
 @property (weak, nonatomic) id<OptInModeSelectionDelegate> delegate;
+
+@property (nonatomic) UIImage *customizeAutoButtonImage;
+@property (nonatomic) UIImage *customizeAutoButtonSelectedImage;
+@property (nonatomic) UIImage *customizeManualButtonImage;
+@property (nonatomic) UIImage *customizeManualButtonSelectedImage;
+
+@property (nonatomic) NSString *streamID;
+@property (nonatomic) NSString *streamName;
+
 @end

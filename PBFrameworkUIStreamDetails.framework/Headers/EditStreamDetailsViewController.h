@@ -21,6 +21,7 @@ typedef NS_ENUM(NSInteger, StreamType) {
 @property (weak, nonatomic) IBOutlet UIView *viewFutureStream;
 @property (weak, nonatomic) IBOutlet UIView *startEndDateExpanders;
 @property (weak, nonatomic) IBOutlet UIView *topBar;
+@property (weak, nonatomic) IBOutlet UIView *vNavigation;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblStarts;
 @property (weak, nonatomic) IBOutlet UILabel *lblStartTime;

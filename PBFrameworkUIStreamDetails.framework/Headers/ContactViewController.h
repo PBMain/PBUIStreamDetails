@@ -50,10 +50,11 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblTitleMain;
 @property (strong, nonatomic) IBOutlet UILabel *lblForNotFoundInst;
 
-@property (strong, nonatomic) IBOutlet UIButton *btnCancel;
 @property (strong, nonatomic) IBOutlet UIButton *btnShare;
+@property (strong, nonatomic) IBOutlet UIButton *btnBack;
 
 @property (weak, nonatomic) IBOutlet UIView *viewNavigationBar;
+@property (weak, nonatomic) IBOutlet UIView *viewSafeArea;
 @property (weak, nonatomic) IBOutlet UIView *viewForStartTyping;
 @property (weak, nonatomic) IBOutlet UIView *viewForContactAccess;
 @property (weak, nonatomic) IBOutlet UIView *viewForCollectionView;
@@ -62,5 +63,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgForSearch;
 @property (weak, nonatomic) IBOutlet UIImageView *imgForMainImageSearch;
+
+-(IBAction)pressCancel:(id)sender;
 
 @end

@@ -22,6 +22,7 @@
 @property (retain,nonatomic) IBOutlet UILabel *lblStreamSecondManage;
 @property (retain,nonatomic) IBOutlet UILabel *lblNumberOfPhotosInMain;
 @property (weak, nonatomic) IBOutlet UIImageView *imgDupe;
+@property (weak, nonatomic) IBOutlet UIImageView *imgMoreArrow;
 
 @property (retain,nonatomic) IBOutlet UIView *viewForSelected;
 @property (retain,nonatomic) IBOutlet UIView *viewLive;
@@ -51,8 +52,17 @@
 @property (retain,nonatomic) IBOutlet UIImageView *imgPlayVideo;
 @property (retain,nonatomic) IBOutlet UIView *vLoadVideo;
 
+// For the "MORE" cell at the end of a category.
+@property (weak, nonatomic) IBOutlet UILabel *numPhotosLbl;
+@property (weak, nonatomic) IBOutlet UILabel *moreFromLbl;
+@property (weak, nonatomic) IBOutlet UIImageView *moreArrow;
+@property (weak, nonatomic) IBOutlet UIView *moreGradient;
+
 - (void)addDupeIcon;
--(void)clearDupeIcon;
+- (void)clearDupeIcon;
+- (void)addMoreArrowIcon;
+- (void)clearMoreArrowIcon;
+- (void)moreFromDay:(NSInteger)day withExtraPhotos:(NSInteger)numPhotos;
 
 // Constraints for ACTIVE and VIEWING horizontal positions
 @property (nonatomic) IBOutlet NSLayoutConstraint *layoutViewing;

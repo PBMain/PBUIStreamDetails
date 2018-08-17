@@ -11,5 +11,10 @@
 
 @interface MainPhotoAlbumMapCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIView *tutorialView;
+@property (weak, nonatomic) IBOutlet UIButton *tutorialOverlayButton;
+
+-(void)showTutorial : (BOOL)show;
+
 
 @end

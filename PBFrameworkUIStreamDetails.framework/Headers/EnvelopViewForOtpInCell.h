@@ -31,6 +31,8 @@
 @property (retain,nonatomic) IBOutlet UILabel *labelRemoveS2;
 @property (weak, nonatomic) IBOutlet UIButton *btnBecomeContributorP1;
 @property (weak, nonatomic) IBOutlet UIButton *btnBecomeContributorP2;
+@property (weak, nonatomic) IBOutlet UIButton *btnViewOnly;
+@property (weak, nonatomic) IBOutlet UIImageView *gradientViewProfileIconP2;
 
 @property (weak, nonatomic) IBOutlet UIView *viewContainer;
 

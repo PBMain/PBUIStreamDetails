@@ -11,5 +11,6 @@
 @interface ScrollDateIndicator : UIView
 @property (weak, nonatomic) IBOutlet UILabel *lblTime;
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
+@property (weak, nonatomic) IBOutlet UIImageView *imgTimeDisplay;
 
 @end

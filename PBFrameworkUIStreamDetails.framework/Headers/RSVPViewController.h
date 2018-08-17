@@ -59,7 +59,9 @@
 @property (retain,nonatomic) IBOutlet UILabel *lblForSubTitle;
 
 @property (retain,nonatomic) IBOutlet UIView *viewForNavigation;
+@property (retain,nonatomic) IBOutlet UIView *viewSafeArea;
 @property (retain,nonatomic) IBOutlet UIButton *buttonForJoinTheStream;
+@property (retain,nonatomic) IBOutlet UIButton *buttonBack;
 
 @property (nonatomic) int tickCount;
 

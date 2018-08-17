@@ -81,6 +81,9 @@
 @property (nonatomic) NSString *commentIdForShowing;
 @property (nonatomic) NSString *regCode;
 @property (nonatomic) int compareCount;
+@property (nonatomic) BOOL isLoadingS3Links;
+@property (nonatomic) NSMutableIndexSet *indexSetExpiredRanges;
+@property (nonatomic) NSTimer *timerCheckRangesForExpiredS3;
 @property (nonatomic) BOOL hasLoadedHeroImage;
 @property (nonatomic) BOOL isInBlackout;
 @property (nonatomic) NSDictionary *album;
@@ -127,6 +130,9 @@
 @property (nonatomic) NSMutableArray *arrayGalleryOthers;
 @property (nonatomic) NSMutableArray *arrayLocations;
 @property (nonatomic) NSMutableArray *arrayRecipients;
+@property (nonatomic) NSMutableDictionary *queueS3Bucket;
+@property (nonatomic) NSMutableArray *queueS3InProgress;
+@property (nonatomic, assign) BOOL queueDirty;
 @property (assign,nonatomic) BOOL showAllGalleryPhotos;
 @property (assign,nonatomic) BOOL showMineGalleryPhotos;
 @property (assign,nonatomic) BOOL showHighlightsGalleryPhotos;
@@ -178,8 +184,20 @@
 @property (nonatomic) SortState currentSortState;
 @property (nonatomic) ScrollDateIndicator *scrollDateIndicator;
 @property (nonatomic) BOOL disableScrollIndicator;
+@property (nonatomic) BOOL allowScrollerUpdate;
 @property (nonatomic) UIImageView *scrollDragger;
 @property (nonatomic) CGFloat panVelocity_y;
+
+// Map
+@property (nonatomic) BOOL usePhotoMapMarkers;
+@property (nonatomic) NSMutableDictionary *mapLocationCategoryData;
+@property (nonatomic) NSMutableArray *arrayCategoriesMap;
+@property (nonatomic) NSMutableArray *arrayCategoriesNonMap;
+
+// Reloading Expired Images
+@property (nonatomic) BOOL isReloadingHighlightsForExpiredImages;
+@property (nonatomic) BOOL isReloadingPhotosForExpiredImages;
+@property (nonatomic) float expiredHighlightsReloadLength;
 
 - (void) timerTick;
 - (void) beContributorAction;
@@ -209,6 +227,7 @@
 @property (nonatomic) BOOL isFavorite;
 @property (nonatomic) int numberFavorites;
 @property (nonatomic) int numberComments;
+@property (nonatomic) NSDate *dateLastRefreshedComments;
 
 @property (nonatomic) BOOL isFromUpcoming;
 @property (nonatomic) BOOL isOptIn;
@@ -255,5 +274,14 @@
 
 // Customization
 @property (nonatomic) NSString *peopleHeaderText;
+
+// Selection of highlights tab on first load
+@property (nonatomic) BOOL hasSelectedHighlightsOnFirstLoad;
+
+// Dan's crappier and faster to implement queue
+@property (nonatomic) NSMutableArray *queueHighlightsJobs;
+@property (nonatomic) BOOL queueHighlightsIsLoading;
+@property (nonatomic) NSMutableArray *queueAllPhotosDoneOldToNew;
+@property (nonatomic) NSMutableArray *queueAllPhotosDoneNewToOld;
 
 @end
