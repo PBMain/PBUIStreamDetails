@@ -14,6 +14,7 @@
 @property (nonatomic, weak) id<CustomStreamCoverMenuDelegate> delegate;
 
 @property (retain,nonatomic) IBOutletCollection(UIImageView) NSArray *arrImgs;
+@property (retain,nonatomic) IBOutletCollection(UIButton) NSArray *arrBtns;
 @property (retain,nonatomic) IBOutlet UIButton *btnEdit;
 @property (retain,nonatomic) IBOutlet UIButton *btnFromRoll;
 @property (retain,nonatomic) IBOutlet UIButton *btnFromCamera;

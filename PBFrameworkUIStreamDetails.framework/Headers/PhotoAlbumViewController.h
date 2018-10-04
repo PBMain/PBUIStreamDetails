@@ -11,6 +11,7 @@
 #import "OptInModeSelectionView.h"
 #import "YMSPhotoPickerViewController.h"
 #import "UIViewController+YMSPhotoHelper.h"
+#import "OneButtonMenu.h"
 
 #import <TOCropViewController/TOCropViewController.h>
 
@@ -31,7 +32,7 @@
 -(void)addExistingPersonView:(id)person;
 @end
 
-@interface PhotoAlbumViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, MKMapViewDelegate, CustomStreamCoverMenuDelegate, CustomCoverCameraDelegate, TOCropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ChooseImageFromStreamDelegate, OptInViewDelegate, OptInModeSelectionDelegate, YMSPhotoPickerViewControllerDelegate> {
+@interface PhotoAlbumViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, MKMapViewDelegate, CustomStreamCoverMenuDelegate, CustomCoverCameraDelegate, TOCropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ChooseImageFromStreamDelegate, OptInViewDelegate, OptInModeSelectionDelegate, YMSPhotoPickerViewControllerDelegate, OneButtonMenuDelegate> {
     IBOutlet UIView *viewNavigation;
     IBOutlet UIView *viewNavigationSafeArea;
     
@@ -39,6 +40,7 @@
     
     IBOutlet UILabel *lblViewingSpector;
     IBOutlet UIView *viewSpector;
+    IBOutlet UIView *viewOneButtonOpener;
     
     IBOutlet UIView *viewStopCamAudiMain;
     IBOutlet NSLayoutConstraint *heightStopCamAudiMain;
@@ -193,6 +195,8 @@
 @property (nonatomic) NSMutableDictionary *mapLocationCategoryData;
 @property (nonatomic) NSMutableArray *arrayCategoriesMap;
 @property (nonatomic) NSMutableArray *arrayCategoriesNonMap;
+@property (nonatomic) MKMapRect originalMapRect; // For comparison purposes
+@property (nonatomic) MKMapRect lastValidRect;
 
 // Reloading Expired Images
 @property (nonatomic) BOOL isReloadingHighlightsForExpiredImages;
@@ -260,6 +264,7 @@
 @property (nonatomic) NSString *tmpCustomCoverAssetID;
 @property (nonatomic) NSString *tmpCustomCoverFileName;
 @property (nonatomic) NSString *tmpCustomCoverCreationDate;
+@property (nonatomic) NSString *tmpCustomCoverImageURL;
 @property (nonatomic) BOOL hasChangedHighlightSorting;
 @property (nonatomic) SortState previousNonHighlightSort;
 @property (nonatomic) LocationServicesDeniedView *lsdv;
@@ -283,5 +288,11 @@
 @property (nonatomic) BOOL queueHighlightsIsLoading;
 @property (nonatomic) NSMutableArray *queueAllPhotosDoneOldToNew;
 @property (nonatomic) NSMutableArray *queueAllPhotosDoneNewToOld;
+
+// One Button Menu
+@property (nonatomic) IBOutlet UIImageView *imgOneButtonMenuImage;
+-(IBAction)pressOneButtonMenu:(id)sender;
+
+@property (nonatomic) UIImage *coverImage;
 
 @end

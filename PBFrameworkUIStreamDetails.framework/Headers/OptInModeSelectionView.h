@@ -20,4 +20,7 @@
 @property (nonatomic) NSString *streamID;
 @property (nonatomic) NSString *streamName;
 
+-(IBAction)manualTapped:(UITapGestureRecognizer *)sender;
+-(IBAction)autoTapped:(UITapGestureRecognizer *)sender;
+
 @end

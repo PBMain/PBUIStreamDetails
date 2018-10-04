@@ -11,7 +11,6 @@
 @property (retain,nonatomic) IBOutlet UIView *viewDot;
 
 // Redraws the button
--(void) setContributing;
--(void) setSpectating;
+-(void) setComponents;
 
 @end

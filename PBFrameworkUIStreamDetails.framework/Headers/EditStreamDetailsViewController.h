@@ -7,13 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomStreamCoverMenu.h"
+#import "CustomCoverCameraViewController.h"
+#import "DeleteStreamView.h"
+#import <TOCropViewController/TOCropViewController.h>
 
 typedef NS_ENUM(NSInteger, StreamType) {
     CurrentStreamType = 0,
     FutureStreamType,
     ExpiredStreamType
 };
-@interface EditStreamDetailsViewController : UIViewController <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+
+@import Photos;
+
+@interface EditStreamDetailsViewController : UIViewController <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, CustomStreamCoverMenuDelegate, CustomCoverCameraDelegate, TOCropViewControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *tfStreamName;
 @property (weak, nonatomic) IBOutlet UIButton *btnPencil;
@@ -34,6 +41,7 @@ typedef NS_ENUM(NSInteger, StreamType) {
 @property (assign) CGFloat endPickerConOriginal;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameToCurrentStream;
 @property (weak, nonatomic) IBOutlet UIButton *btnDelete;
+@property (weak, nonatomic) IBOutlet UIButton *btnStop;
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (nonatomic, assign) StreamType currentState;
@@ -60,6 +68,29 @@ typedef NS_ENUM(NSInteger, StreamType) {
 @property (nonatomic, strong) UILabel *lblHours;
 @property (nonatomic, strong) UILabel *lblMin;
 @property (nonatomic) NSString* streamName;
+
+// Cover Image
+@property (weak, nonatomic) IBOutlet UIImageView *imgCoverPhoto;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *conChooseCoverPhoto;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *conCoverPhoto;
+@property (weak, nonatomic) IBOutlet UIView *viewChooseCoverPhoto;
+@property (weak, nonatomic) IBOutlet UIView *viewCoverPhoto;
+@property (weak, nonatomic) IBOutlet UIView *viewDeleteStream;
+@property (weak, nonatomic) IBOutlet UIButton *btnRemoveCover;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutStopButtonHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutFutureStreamHeight;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) UIImage *coverImage;
+//CustomStreamCoverMenu *customCoverMenu;
+@property (nonatomic) CustomStreamCoverMenu *customCoverMenu;
+@property (nonatomic) TOCropViewController *cropController;
+@property (nonatomic) UIImagePickerController *libraryPicker;
+@property (nonatomic) PHAsset *assetFromLibrary;
+@property (nonatomic) NSString *customCoverType;
+@property (nonatomic) NSString *tmpCustomCoverAssetID;
+@property (nonatomic) NSString *tmpCustomCoverFileName;
+@property (nonatomic) NSString *tmpCustomCoverCreationDate;
+@property (nonatomic) DeleteStreamView *deleteStreamView;
 
 - (void) setViewsForState;
 @end

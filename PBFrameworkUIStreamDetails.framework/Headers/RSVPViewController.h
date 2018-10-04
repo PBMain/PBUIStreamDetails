@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OneButtonMenuUpcoming.h"
+#import "OptInModeSelectionView.h"
 
-@interface RSVPViewController : UIViewController{
+@interface RSVPViewController : UIViewController <OneButtonMenuUpcomingDelegate, OptInModeSelectionDelegate> {
     IBOutlet UIImageView *imgBackground;
     IBOutlet UIImageView *imgLine1;
     IBOutlet UIImageView *imgLine2;
@@ -33,14 +35,12 @@
 
 @property (retain,nonatomic) IBOutlet UIView *viewMain;
 @property (retain,nonatomic) IBOutlet UIView *viewForRSVP;
-@property (retain,nonatomic) IBOutlet UIView *viewForThanks;
-
-@property (retain,nonatomic) IBOutlet UIView *viewForThanksConfirmedButton;
-@property (retain,nonatomic) IBOutlet UIImageView *imgRightIcon;
-@property (retain,nonatomic) IBOutlet UIButton *btnConfirmed;
-@property (retain,nonatomic) IBOutlet UILabel *lblConfirmed;
-@property (retain,nonatomic) IBOutlet UIButton *btnConfirm;
-@property (retain,nonatomic) IBOutlet UILabel *lblThanks;
+@property (retain,nonatomic) IBOutlet UIButton *btnContributeMenu;
+@property (retain,nonatomic) IBOutlet UIView *viewOrangeCircle;
+@property (retain,nonatomic) IBOutlet UIView *viewInfoBubble;
+@property (retain,nonatomic) IBOutlet UILabel *lblInfoText;
+@property (retain,nonatomic) IBOutlet UILabel *lblBottomTitle;
+@property (retain,nonatomic) IBOutlet UILabel *lblBottomSubtitle;
 
 @property (retain,nonatomic) IBOutlet UIImageView *imgProfile;
 @property (retain,nonatomic) IBOutlet UILabel *lblForHostName;
@@ -52,15 +52,12 @@
 @property (retain,nonatomic) IBOutlet UILabel *lblForSeconds;
 
 @property (retain,nonatomic) IBOutlet UILabel *lblForDateRange;
-@property (retain,nonatomic) IBOutlet UILabel *lblRSVP;
-@property (retain,nonatomic) IBOutlet UILabel *lblJoinStream;
 
 @property (retain,nonatomic) IBOutlet UILabel *lblForTitle;
 @property (retain,nonatomic) IBOutlet UILabel *lblForSubTitle;
 
 @property (retain,nonatomic) IBOutlet UIView *viewForNavigation;
 @property (retain,nonatomic) IBOutlet UIView *viewSafeArea;
-@property (retain,nonatomic) IBOutlet UIButton *buttonForJoinTheStream;
 @property (retain,nonatomic) IBOutlet UIButton *buttonBack;
 
 @property (nonatomic) int tickCount;
