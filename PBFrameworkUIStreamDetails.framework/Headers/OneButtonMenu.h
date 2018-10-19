@@ -27,22 +27,35 @@ typedef NS_ENUM(NSUInteger, CTA_Type) {
 @property (nonatomic) CTA_Type currentCTA;
 
 @property (nonatomic, weak) id <OneButtonMenuDelegate> delegate;
+@property (nonatomic) BOOL upcoming;
+@property (nonatomic) BOOL host;
+@property (nonatomic) NSString *streamID;
+@property (nonatomic) NSString *streamName;
 
 @property (nonatomic) IBOutlet UIImageView *imgLeaveEditStream;
-@property (nonatomic) IBOutlet UIImageView *imgAudience;
 @property (nonatomic) IBOutlet UIImageView *imgShare;
-@property (nonatomic) IBOutlet UIImageView *imgFavorite;
-@property (nonatomic) IBOutlet UIImageView *imgComments;
+@property (nonatomic) IBOutlet UIImageView *imgAutoUpload;
 @property (nonatomic) IBOutlet UILabel *lblLeaveEditStream;
-@property (nonatomic) IBOutlet UILabel *lblAudience;
 @property (nonatomic) IBOutlet UILabel *lblShare;
-@property (nonatomic) IBOutlet UILabel *lblFavorite;
-@property (nonatomic) IBOutlet UILabel *lblComments;
+@property (nonatomic) IBOutlet UILabel *lblAutoUpload;
 @property (nonatomic) IBOutlet UIButton *btnCancel;
 @property (nonatomic) IBOutlet UIView *vCallsToAction;
 @property (nonatomic) IBOutlet UIView *vButtonsWhiteBackground;
 @property (nonatomic) IBOutlet UIView *vButtonsGrayBackground;
+@property (nonatomic) IBOutlet UIView *vbAutoUpload;
+@property (nonatomic) IBOutlet UIView *vbManualUpload;
+@property (nonatomic) IBOutlet UIView *vbSaveShare;
+@property (nonatomic) IBOutlet UIView *vbEditLeave;
+@property (nonatomic) IBOutletCollection(UIView) NSArray *arrayButtonImageContainers;
+@property (nonatomic) IBOutletCollection(UIImageView) NSArray *arrayButtonImages;
 @property (nonatomic) IBOutlet NSLayoutConstraint *lcButtonsWhiteBackgroundHeight;
+@property (nonatomic) IBOutlet NSLayoutConstraint *lcCallToActionContainerHeight;
+@property (nonatomic) IBOutlet NSLayoutConstraint *lcGrayBackgroundHeight;
+@property (nonatomic) IBOutlet NSLayoutConstraint *lcSharePhotosHeight;
+@property (nonatomic) IBOutlet NSLayoutConstraint *lcManualHeight;
+@property (nonatomic) IBOutlet NSLayoutConstraint *lcAutomaticHeight;
+@property (nonatomic) IBOutlet NSLayoutConstraint *lcLeaveEditHeight;
+@property (nonatomic) IBOutlet UISwitch *switchAutoUpload;
 
 -(void) prepareForNoCallToAction;
 -(void) prepareForContributionInvite;
@@ -50,6 +63,8 @@ typedef NS_ENUM(NSUInteger, CTA_Type) {
 -(void) prepareForManualSharing;
 -(void) prepareForContributingStreamOver;
 -(void) setIsHost:(BOOL)isHost;
+-(void) setIsUpcoming:(BOOL)isUpcoming;
+-(void) setHasPhotos:(BOOL)hasPhotos;
 
 -(void) showContributionEnvelope;
 -(void) contributionPause;

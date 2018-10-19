@@ -11,6 +11,7 @@
 #import "CustomCoverCameraViewController.h"
 #import "DeleteStreamView.h"
 #import <TOCropViewController/TOCropViewController.h>
+#import <PBFrameworkUIStreamDetails/ChooseImageFromStream.h>
 
 typedef NS_ENUM(NSInteger, StreamType) {
     CurrentStreamType = 0,
@@ -20,7 +21,7 @@ typedef NS_ENUM(NSInteger, StreamType) {
 
 @import Photos;
 
-@interface EditStreamDetailsViewController : UIViewController <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, CustomStreamCoverMenuDelegate, CustomCoverCameraDelegate, TOCropViewControllerDelegate, UIImagePickerControllerDelegate>
+@interface EditStreamDetailsViewController : UIViewController <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, CustomStreamCoverMenuDelegate, CustomCoverCameraDelegate, ChooseImageFromStreamDelegate, CustomStreamCoverMenuDelegate, TOCropViewControllerDelegate, UIImagePickerControllerDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *tfStreamName;
 @property (weak, nonatomic) IBOutlet UIButton *btnPencil;
@@ -91,6 +92,12 @@ typedef NS_ENUM(NSInteger, StreamType) {
 @property (nonatomic) NSString *tmpCustomCoverFileName;
 @property (nonatomic) NSString *tmpCustomCoverCreationDate;
 @property (nonatomic) DeleteStreamView *deleteStreamView;
+@property (weak, nonatomic) NSLayoutConstraint *conCurrentStreamHeight;
+@property (nonatomic) NSArray *arrayGalleryAll;
+@property (weak, nonatomic) IBOutlet UIView *contentViewForScrollView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *conDeleteAndFuture;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *conDeleteAndCurrent;
+@property (weak, nonatomic) NSLayoutConstraint *conDeleteAndCover;
 
 - (void) setViewsForState;
 @end

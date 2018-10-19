@@ -124,6 +124,9 @@
 @property (nonatomic) int peopleInvited;
 @property (nonatomic) int peopleViewed;
 @property (retain,nonatomic) NSMutableDictionary *imgHero;
+/** @property arrayPeopleSeen
+ *   @brief It contains array of dictionaries.
+ *   Exapmle: @{@"peopleCategoryName" : "listOfPeopleInThisCategory"} **/
 @property (nonatomic) NSMutableArray *arrayPeopleSeen;
 @property (nonatomic) NSMutableArray *arrayRecentHighlights;
 @property (nonatomic) NSMutableArray *arrayGalleryAll;
@@ -153,6 +156,7 @@
 @property (atomic) NSRecursiveLock *lockRefreshArray;
 @property (atomic) NSLock *lockGetImagesFromDB;
 @property (atomic) NSLock *lockLoadVisibleCells;
+@property (atomic) NSLock *lockRefreshingFromSocket;
 @property (nonatomic) BOOL dragRefreshAvailable;
 @property (nonatomic) LoadingView *viewLoading;
 
@@ -291,8 +295,11 @@
 
 // One Button Menu
 @property (nonatomic) IBOutlet UIImageView *imgOneButtonMenuImage;
+@property (nonatomic) IBOutlet UIView *vOneButtonMenuInnerContainer;
+@property (nonatomic) IBOutlet UIImageView *imgOneButtonMenuInner;
 -(IBAction)pressOneButtonMenu:(id)sender;
 
 @property (nonatomic) UIImage *coverImage;
+@property (nonatomic) NSString *coverImageURL;
 
 @end

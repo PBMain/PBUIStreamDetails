@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "OneButtonMenuUpcoming.h"
+#import "OneButtonMenu.h"
 #import "OptInModeSelectionView.h"
 
-@interface RSVPViewController : UIViewController <OneButtonMenuUpcomingDelegate, OptInModeSelectionDelegate> {
+@interface RSVPViewController : UIViewController <OneButtonMenuDelegate, OptInModeSelectionDelegate> {
     IBOutlet UIImageView *imgBackground;
     IBOutlet UIImageView *imgLine1;
     IBOutlet UIImageView *imgLine2;
@@ -28,6 +28,7 @@
 @property (retain,nonatomic) NSString *inviteCode;
 @property (nonatomic, assign) BOOL isContributor;
 @property (nonatomic) BOOL hasLoadedBlankImages;
+@property (nonatomic) UIImage *coverImage;
 
 @property (retain,nonatomic) NSTimer *timerClock;
 
@@ -59,6 +60,9 @@
 @property (retain,nonatomic) IBOutlet UIView *viewForNavigation;
 @property (retain,nonatomic) IBOutlet UIView *viewSafeArea;
 @property (retain,nonatomic) IBOutlet UIButton *buttonBack;
+
+@property (nonatomic) IBOutlet UIView *vOneButtonMenuInnerContainer;
+@property (nonatomic) IBOutlet UIImageView *imgOneButtonMenuInner;
 
 @property (nonatomic) int tickCount;
 
