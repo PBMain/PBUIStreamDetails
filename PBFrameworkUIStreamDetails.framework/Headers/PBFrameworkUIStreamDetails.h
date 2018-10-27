@@ -96,3 +96,4 @@ FOUNDATION_EXPORT const unsigned char PBFrameworkUIStreamDetailsVersionString[];
 #import <PBFrameworkUIStreamDetails/ManualUploadCTA.h>
 #import <PBFrameworkUIStreamDetails/OneButtonMenu.h>
 #import <PBFrameworkUIStreamDetails/OneButtonMenuUpcoming.h>
+#import <PBFrameworkUIStreamDetails/CustomParkMapCell.h>

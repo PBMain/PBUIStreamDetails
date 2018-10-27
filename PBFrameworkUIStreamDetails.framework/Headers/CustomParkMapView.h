@@ -15,6 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSMutableArray *pinInfo;
 @property (strong) id<CustomParkMapViewProtocol> delegate;
 @property (nonatomic) NSMutableArray *pins;
+@property (nonatomic) NSString *pinImageURL;
+@property (nonatomic) NSString *mapImageURL;
+@property (nonatomic) UIImage *mapImage;
+@property (nonatomic) UIImage *pinImage;
+@property (nonatomic) NSMutableArray<UIImageView*> *ivLoader;
 
 -(void) drawPins;
 -(void) redrawPins;

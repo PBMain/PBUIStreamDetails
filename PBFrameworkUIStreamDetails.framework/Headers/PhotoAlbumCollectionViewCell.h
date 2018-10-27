@@ -63,6 +63,8 @@
 - (void)addMoreArrowIcon;
 - (void)clearMoreArrowIcon;
 - (void)moreFromDay:(NSInteger)day withExtraPhotos:(NSInteger)numPhotos;
+- (void)applyShadow;
+- (void)applyGradientLayerWithColors: (NSArray*) colors;
 
 // Constraints for ACTIVE and VIEWING horizontal positions
 @property (nonatomic) IBOutlet NSLayoutConstraint *layoutViewing;

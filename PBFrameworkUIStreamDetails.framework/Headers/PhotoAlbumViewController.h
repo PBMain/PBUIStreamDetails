@@ -12,6 +12,7 @@
 #import "YMSPhotoPickerViewController.h"
 #import "UIViewController+YMSPhotoHelper.h"
 #import "OneButtonMenu.h"
+#import "CustomParkMapCell.h"
 
 #import <TOCropViewController/TOCropViewController.h>
 
@@ -32,7 +33,7 @@
 -(void)addExistingPersonView:(id)person;
 @end
 
-@interface PhotoAlbumViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, MKMapViewDelegate, CustomStreamCoverMenuDelegate, CustomCoverCameraDelegate, TOCropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ChooseImageFromStreamDelegate, OptInViewDelegate, OptInModeSelectionDelegate, YMSPhotoPickerViewControllerDelegate, OneButtonMenuDelegate> {
+@interface PhotoAlbumViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, MKMapViewDelegate, CustomStreamCoverMenuDelegate, CustomCoverCameraDelegate, TOCropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ChooseImageFromStreamDelegate, OptInViewDelegate, OptInModeSelectionDelegate, YMSPhotoPickerViewControllerDelegate, OneButtonMenuDelegate, CustomParkMapCellProtocol> {
     IBOutlet UIView *viewNavigation;
     IBOutlet UIView *viewNavigationSafeArea;
     
@@ -41,10 +42,12 @@
     IBOutlet UILabel *lblViewingSpector;
     IBOutlet UIView *viewSpector;
     IBOutlet UIView *viewOneButtonOpener;
+    IBOutlet UIButton *btnOneButtonMenu;
     
     IBOutlet UIView *viewStopCamAudiMain;
     IBOutlet NSLayoutConstraint *heightStopCamAudiMain;
     IBOutlet NSLayoutConstraint *heightUploadProgressView;
+    IBOutlet NSLayoutConstraint *widthEditStreamButton;
     IBOutlet UILabel *lblUploadProgress;
     IBOutlet UIButton *btnChooseUploads;
     IBOutlet UIView *vChooseUploadsLoadingCircle;
@@ -255,7 +258,7 @@
 @property (nonatomic) OptInView *vOptIn;
 @property (nonatomic) OptInModeSelectionView *vOptInModeSelect;
 
-// Loadinng screen
+// Loading screen
 -(void) hideLoading;
 
 // Custom covers
@@ -301,5 +304,10 @@
 
 @property (nonatomic) UIImage *coverImage;
 @property (nonatomic) NSString *coverImageURL;
+
+// Folder information
+@property (nonatomic) NSDictionary *folder;
+// Folder logo
+@property (nonatomic) IBOutlet UIImageView *imgFolderLogoInHeader;
 
 @end

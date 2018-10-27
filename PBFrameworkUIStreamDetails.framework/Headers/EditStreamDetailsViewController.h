@@ -77,9 +77,12 @@ typedef NS_ENUM(NSInteger, StreamType) {
 @property (weak, nonatomic) IBOutlet UIView *viewChooseCoverPhoto;
 @property (weak, nonatomic) IBOutlet UIView *viewCoverPhoto;
 @property (weak, nonatomic) IBOutlet UIView *viewDeleteStream;
+@property (weak, nonatomic) IBOutlet UIView *viewDeleteStreamAnchored;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutDeleteStreamAnchoredHeight;
 @property (weak, nonatomic) IBOutlet UIButton *btnRemoveCover;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutStopButtonHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutFutureStreamHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutFutureStreamBuffer;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) UIImage *coverImage;
 //CustomStreamCoverMenu *customCoverMenu;
@@ -92,6 +95,7 @@ typedef NS_ENUM(NSInteger, StreamType) {
 @property (nonatomic) NSString *tmpCustomCoverFileName;
 @property (nonatomic) NSString *tmpCustomCoverCreationDate;
 @property (nonatomic) DeleteStreamView *deleteStreamView;
+@property (nonatomic) DeleteStreamView *deleteStreamViewAnchored;
 @property (weak, nonatomic) NSLayoutConstraint *conCurrentStreamHeight;
 @property (nonatomic) NSArray *arrayGalleryAll;
 @property (weak, nonatomic) IBOutlet UIView *contentViewForScrollView;

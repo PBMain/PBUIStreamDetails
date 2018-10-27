@@ -18,6 +18,8 @@
 
 @property (retain,nonatomic) NSString *albumTitle;
 @property (retain,nonatomic) NSString *albumId;
+@property (retain,nonatomic) NSString *folderID;
+@property (retain,nonatomic) NSDictionary *folder;
 @property (retain,nonatomic) NSDictionary *album;
 @property (retain,nonatomic) NSString *hostUserId;
 @property (retain,nonatomic) NSString *hostPersonId;
