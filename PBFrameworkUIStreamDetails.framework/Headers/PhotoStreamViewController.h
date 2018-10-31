@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIImageView_ImageCircle.h"
 
 @class LoadingView;
 @interface PhotoStreamViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>{
@@ -25,6 +26,7 @@
 @property (nonatomic,retain) IBOutlet UICollectionView *colvAlbumList;
 @property (nonatomic,retain) IBOutlet UILabel *lblAlbumName;
 @property (nonatomic,retain) IBOutlet UILabel *lblTitle;
+@property (nonatomic,retain) IBOutlet ImageCircle *imgView;
 
 @property (nonatomic) LoadingView *loadingView;
 

@@ -11,7 +11,6 @@
 #import "OptInModeSelectionView.h"
 
 @interface RSVPViewController : UIViewController <OneButtonMenuDelegate, OptInModeSelectionDelegate> {
-    IBOutlet UIImageView *imgBackground;
     IBOutlet UIImageView *imgLine1;
     IBOutlet UIImageView *imgLine2;
 }
@@ -65,6 +64,11 @@
 
 @property (nonatomic) IBOutlet UIView *vOneButtonMenuInnerContainer;
 @property (nonatomic) IBOutlet UIImageView *imgOneButtonMenuInner;
+
+@property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
+
+@property (weak, nonatomic) IBOutlet UIView *gradientView;
 
 @property (nonatomic) int tickCount;
 
