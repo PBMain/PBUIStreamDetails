@@ -35,6 +35,7 @@ typedef NS_ENUM(NSUInteger, CTA_Type) {
 @property (nonatomic) IBOutlet UIImageView *imgLeaveEditStream;
 @property (nonatomic) IBOutlet UIImageView *imgShare;
 @property (nonatomic) IBOutlet UIImageView *imgAutoUpload;
+@property (nonatomic) IBOutlet UIView *vAutoUploadImgBG;
 @property (nonatomic) IBOutlet UILabel *lblLeaveEditStream;
 @property (nonatomic) IBOutlet UILabel *lblShare;
 @property (nonatomic) IBOutlet UILabel *lblAutoUpload;

@@ -22,6 +22,7 @@
 @property (nonatomic) NSTimer *timerUpload;
 @property (nonatomic) int timerUploadTicks;
 @property (nonatomic) CLLocation *lastKnownLocation;
+@property (nonatomic) BOOL videoSupport;
 
 -(NSString*) getUTCFormattedDate:(NSDate*) date;
 - (void)setLocation:(NSMutableDictionary *)metadata location:(CLLocation *)location;

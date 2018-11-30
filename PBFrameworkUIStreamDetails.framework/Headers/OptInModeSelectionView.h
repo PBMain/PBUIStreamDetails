@@ -1,14 +1,17 @@
-
 #import <UIKit/UIKit.h>
+#import "OptInButton.h"
+
 @protocol OptInModeSelectionDelegate
 @required
 -(void) modeSelected: (NSInteger) mode;
 @end
 
-@interface OptInModeSelectionView : UIView
+@interface OptInModeSelectionView : UIView <OptInButtonDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *btnConfirm;
 @property (weak, nonatomic) IBOutlet UIImageView *imgAuto;
 @property (weak, nonatomic) IBOutlet UIImageView *imgManual;
+@property (weak, nonatomic) IBOutlet UIView *vAuto;
+@property (weak, nonatomic) IBOutlet UIView *vManual;
 @property (nonatomic) NSInteger currentSelection;
 @property (weak, nonatomic) id<OptInModeSelectionDelegate> delegate;
 
@@ -19,6 +22,9 @@
 
 @property (nonatomic) NSString *streamID;
 @property (nonatomic) NSString *streamName;
+
+@property (nonatomic) OptInButton *oibAuto;
+@property (nonatomic) OptInButton *oibManual;
 
 -(IBAction)manualTapped:(UITapGestureRecognizer *)sender;
 -(IBAction)autoTapped:(UITapGestureRecognizer *)sender;

@@ -11,7 +11,6 @@
 
 @class LoadingView;
 @interface PhotoStreamViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>{
-    IBOutlet UIImageView *imgConfetti;
     IBOutlet UIView *viewNavigation;
     IBOutlet UIView *btnBack;
 }
@@ -27,6 +26,7 @@
 @property (nonatomic,retain) IBOutlet UILabel *lblAlbumName;
 @property (nonatomic,retain) IBOutlet UILabel *lblTitle;
 @property (nonatomic,retain) IBOutlet ImageCircle *imgView;
+@property (nonatomic,retain) IBOutlet UIView *vScrollingContainer;
 
 @property (nonatomic) LoadingView *loadingView;
 

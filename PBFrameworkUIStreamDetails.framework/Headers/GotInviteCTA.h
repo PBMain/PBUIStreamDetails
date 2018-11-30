@@ -3,6 +3,7 @@
 @interface GotInviteCTA : UIView
 
 @property (nonatomic) IBOutlet UIImageView *imgIcon;
+@property (nonatomic) IBOutlet UIView *vIconContainer;
 @property (nonatomic) IBOutlet UIImageView *imgArrow;
 @property (nonatomic) IBOutlet UILabel *lblTitle;
 @property (nonatomic) IBOutlet UILabel *lblSubtitle;

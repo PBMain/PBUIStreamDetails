@@ -23,6 +23,8 @@
 @property (retain,nonatomic) IBOutlet UIView *viewForNavigation;
 @property (retain,nonatomic) IBOutlet UIView *viewSafeArea;
 
+@property (nonatomic) NSString *folderID;
+
 -(IBAction)pressBack:(id)sender;
 -(IBAction)pressNext:(id)sender;
 

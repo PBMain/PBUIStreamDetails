@@ -26,6 +26,7 @@
 
 @property (retain,nonatomic) IBOutlet UIView *viewForSelected;
 @property (retain,nonatomic) IBOutlet UIView *viewLive;
+@property (retain,nonatomic) IBOutlet UIButton *btnPlayVideo;
 @property (retain,nonatomic) IBOutlet UIImageView *imgForSelected;
 
 // Streaming to X / Y people

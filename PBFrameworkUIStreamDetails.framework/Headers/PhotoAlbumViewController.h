@@ -301,6 +301,7 @@
 @property (nonatomic) IBOutlet UIView *vOneButtonMenuInnerContainer;
 @property (nonatomic) IBOutlet UIImageView *imgOneButtonMenuInner;
 -(IBAction)pressOneButtonMenu:(id)sender;
+-(IBAction)pressMagicCoverVideoButton:(id)sender;
 
 @property (nonatomic) UIImage *coverImage;
 @property (nonatomic) NSString *coverImageURL;
