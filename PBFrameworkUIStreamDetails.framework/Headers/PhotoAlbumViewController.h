@@ -204,6 +204,10 @@
 @property (nonatomic) NSMutableArray *arrayCategoriesNonMap;
 @property (nonatomic) MKMapRect originalMapRect; // For comparison purposes
 @property (nonatomic) MKMapRect lastValidRect;
+@property (nonatomic, assign) BOOL mapAutoPanActive;
+@property (nonatomic) unsigned currentAnnotationFocused;
+@property (nonatomic) NSTimer *timerAutoMapPan;
+@property (nonatomic) MKMapView *currentMap;
 
 // Reloading Expired Images
 @property (nonatomic) BOOL isReloadingHighlightsForExpiredImages;
@@ -258,6 +262,9 @@
 @property (nonatomic) OptInView *vOptIn;
 @property (nonatomic) OptInModeSelectionView *vOptInModeSelect;
 
+//NavigationView
+@property (nonatomic, assign) BOOL isNavigationViewHidden;
+
 // Loading screen
 -(void) hideLoading;
 
@@ -310,5 +317,9 @@
 @property (nonatomic) NSDictionary *folder;
 // Folder logo
 @property (nonatomic) IBOutlet UIImageView *imgFolderLogoInHeader;
+
+// Cover image icon and video
+@property (nonatomic) NSString *coverVideoURL;
+@property (nonatomic) NSString *coverVideoIconURL;
 
 @end

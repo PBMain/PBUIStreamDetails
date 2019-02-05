@@ -29,4 +29,6 @@
 
 @property (retain,nonatomic) IBOutlet UILabel *lblOptionTitle;
 @property (retain,nonatomic) IBOutlet UILabel *lblOptionValue;
+
+@property (retain,nonatomic) IBOutlet UILabel *lblDirections;
 @end

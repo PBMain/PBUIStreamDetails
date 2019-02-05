@@ -19,6 +19,7 @@ typedef NS_ENUM(NSInteger, SortState) {
 
 @property (weak, nonatomic) id<StreamSortOptionsDelegate> delegate;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *collectionImages;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *collectionButtons;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *checkMarkCollection;
 
 @property (weak, nonatomic) IBOutlet UIView *optionsContainer;

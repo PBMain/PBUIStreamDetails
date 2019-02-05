@@ -32,13 +32,19 @@ typedef NS_ENUM(NSUInteger, CTA_Type) {
 @property (nonatomic) NSString *streamID;
 @property (nonatomic) NSString *streamName;
 
+@property (weak, nonatomic) IBOutlet UIButton *btnManualUpload;
+
 @property (nonatomic) IBOutlet UIImageView *imgLeaveEditStream;
 @property (nonatomic) IBOutlet UIImageView *imgShare;
 @property (nonatomic) IBOutlet UIImageView *imgAutoUpload;
+@property (nonatomic) IBOutlet UIImageView *imgManualUpload;
+
 @property (nonatomic) IBOutlet UIView *vAutoUploadImgBG;
+@property (nonatomic) IBOutlet UIView *vManualUploadImgBG;
 @property (nonatomic) IBOutlet UILabel *lblLeaveEditStream;
 @property (nonatomic) IBOutlet UILabel *lblShare;
 @property (nonatomic) IBOutlet UILabel *lblAutoUpload;
+@property (nonatomic) IBOutlet UILabel *lblManualUpload;
 @property (nonatomic) IBOutlet UIButton *btnCancel;
 @property (nonatomic) IBOutlet UIView *vCallsToAction;
 @property (nonatomic) IBOutlet UIView *vButtonsWhiteBackground;
@@ -72,5 +78,10 @@ typedef NS_ENUM(NSUInteger, CTA_Type) {
 -(void) contributionStart;
 -(void) openAutomaticContribution;
 -(void) openManualContribution;
+
+-(void) enableManualUploadPhotos : (BOOL) isEnabled;
+-(void) enableAutoSharePhotos : (BOOL) isEnabled;
+
+-(void) hideAutoContributionButton;
 
 @end
