@@ -209,6 +209,9 @@
 @property (nonatomic) NSTimer *timerAutoMapPan;
 @property (nonatomic) MKMapView *currentMap;
 
+// Geo
+@property (nonatomic) NSTimer *geoCheckTimer;
+
 // Reloading Expired Images
 @property (nonatomic) BOOL isReloadingHighlightsForExpiredImages;
 @property (nonatomic) BOOL isReloadingPhotosForExpiredImages;

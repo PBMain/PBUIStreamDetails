@@ -34,6 +34,8 @@
 @property (nonatomic) SEL shareTask;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *conInstagramIconSize;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *conFacebookInstagramSpacing;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *conInstagramSMSSpacing;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *conFacebookIconSize;
 
 @property (nonatomic) UIDocumentInteractionController *docController;
 
