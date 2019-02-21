@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol CollaborateStreamDelegate
+@protocol CollaborateStreamDelegate <NSObject>
 - (void)setHeightByCount:(NSMutableArray *)arraySelected1;
 @end
 
@@ -28,7 +28,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblTitleMain;
 @property (weak, nonatomic) IBOutlet UIView *viewNavigationBar;
-@property (nonatomic) id <CollaborateStreamDelegate> delegate;
+@property (nonatomic, weak) id <CollaborateStreamDelegate> delegate;
 @property (nonatomic) NSMutableArray *arraySelected;
 @property (nonatomic) NSString *albumId;
 
