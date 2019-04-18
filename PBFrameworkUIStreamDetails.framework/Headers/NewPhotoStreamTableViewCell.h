@@ -29,6 +29,13 @@
 
 @property (retain,nonatomic) IBOutlet UILabel *lblOptionTitle;
 @property (retain,nonatomic) IBOutlet UILabel *lblOptionValue;
+@property (retain,nonatomic) IBOutlet UILabel *subtitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *mainTitleLabel;
 
-@property (retain,nonatomic) IBOutlet UILabel *lblDirections;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgSignalHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgSignalTopOffset;
+
+@property (nonatomic, assign) BOOL needToDisplayImgSignal;
+
+
 @end

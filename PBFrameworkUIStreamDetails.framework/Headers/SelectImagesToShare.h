@@ -1,13 +1,14 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
-#import <FBSDKShareKit/FBSDKShareKit.h>
+//#import <FBSDKShareKit/FBSDKShareKit.h>
 
 @class LoadingView;
 
-@interface SelectImagesToShare : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, MFMessageComposeViewControllerDelegate, FBSDKSharingDelegate> {
+@interface SelectImagesToShare : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, MFMessageComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate> {
     
 }
 
+@property (nonatomic) NSString *postID;
 @property (nonatomic) NSString *streamID;
 @property (nonatomic) NSString *streamName;
 @property (nonatomic) NSMutableArray *assetArray;
@@ -26,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnFacebook;
 @property (weak, nonatomic) IBOutlet UIButton *btnInstagram;
 @property (weak, nonatomic) IBOutlet UIButton *btnMessage;
+@property (weak, nonatomic) IBOutlet UIButton *btnIOSControl;
 
 @property (atomic) NSLock  *imageCacheLock;
 @property (nonatomic) NSMutableDictionary *imageCache;
@@ -38,5 +40,13 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *conFacebookIconSize;
 
 @property (nonatomic) UIDocumentInteractionController *docController;
+@property (nonatomic) UIActivityViewController *actController;
+
+// For using iOS sharing dialog
+@property (nonatomic) NSTimer *timerPopupWatcher;
+@property (nonatomic) BOOL hasSentShareEvent;
+
+@property (nonatomic) NSMutableArray *arrayVideoAssetIDs;
+@property (nonatomic) NSMutableArray *arrayImageAssetIDs;
 
 @end

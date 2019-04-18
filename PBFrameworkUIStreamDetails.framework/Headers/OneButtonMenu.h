@@ -83,5 +83,6 @@ typedef NS_ENUM(NSUInteger, CTA_Type) {
 -(void) enableAutoSharePhotos : (BOOL) isEnabled;
 
 -(void) hideAutoContributionButton;
+-(void) hideLeaveEditStreamButton;
 
 @end

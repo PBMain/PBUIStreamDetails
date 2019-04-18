@@ -9,6 +9,7 @@ typedef NS_ENUM(NSInteger, SortState) {
 };
 
 @protocol StreamSortOptionsDelegate <NSObject>
+@optional
 - (void)sortNewToOld:(UIView*)caller;
 - (void)sortOldToNew:(UIView*)caller;
 - (void)sortByRank:(UIView*)caller;
@@ -19,12 +20,12 @@ typedef NS_ENUM(NSInteger, SortState) {
 
 @property (weak, nonatomic) id<StreamSortOptionsDelegate> delegate;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *collectionImages;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *collectionButtons;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *checkMarkCollection;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *collectionButtons;
+
 
 @property (weak, nonatomic) IBOutlet UIView *optionsContainer;
 @property (weak, nonatomic) IBOutlet UIView *cancelContainer;
-
 
 - (IBAction)sortNewestToOldestPressed:(UIButton *)sender;
 - (IBAction)sortOldestToNewestPressed:(UIButton *)sender;

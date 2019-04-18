@@ -15,9 +15,11 @@
 -(BOOL)isValidEmail;
 @end
 
-@protocol ContactViewControllerDelegate
+@protocol ContactViewControllerDelegate <NSObject>
+
 - (void)setHeightByCount:(NSMutableArray *)arraySelected isEmail:(BOOL)isEmail;
 - (void)setHeightByCount:(NSMutableArray *)arraySelected;
+
 @end
 
 @interface ContactViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource,CollaborateStreamDelegate>{
@@ -32,7 +34,7 @@
 @property (nonatomic) IBOutlet UIView *loadingViewContainer;
 @property (strong, nonatomic) NSMutableDictionary *hashContact;
 
-@property (nonatomic) id <ContactViewControllerDelegate> delegate;
+@property (nonatomic, weak) id <ContactViewControllerDelegate> delegate;
 
 @property (strong, nonatomic) IBOutlet UITableView *tblContact;
 @property (strong, nonatomic) IBOutlet UICollectionView *colvContactSelected;

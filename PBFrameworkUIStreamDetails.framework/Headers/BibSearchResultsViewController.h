@@ -31,6 +31,6 @@
 @property (retain,nonatomic) NSString *last;
 @property (retain,nonatomic) NSString *team;
 @property (retain,nonatomic) NSArray *arrayPhotos;
-@property (nonatomic) BOOL *hasLaidOut;
+@property (nonatomic) BOOL hasLaidOut;
 
 @end

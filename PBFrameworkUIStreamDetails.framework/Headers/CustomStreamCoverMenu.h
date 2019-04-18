@@ -28,6 +28,8 @@
 @property (retain,nonatomic) IBOutlet UIView *viewFilterButtonsContainer;
 @property (retain,nonatomic) IBOutlet UIView *viewCancelButtonContainer;
 
+@property (retain,nonatomic) NSString *streamID;
+
 -(IBAction)pressEditCover:(id)sender;
 -(IBAction)pressFromRoll:(id)sender;
 -(IBAction)pressFromCamera:(id)sender;

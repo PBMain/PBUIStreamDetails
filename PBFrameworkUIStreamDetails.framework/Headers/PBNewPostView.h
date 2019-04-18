@@ -35,6 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
 //UITextView
 @property (weak, nonatomic) IBOutlet UITextView *messageTextView;
 @property (nonatomic, strong) NSMutableArray *photosToUpload;
+@property (nonatomic, strong) NSString *streamID;
+@property (nonatomic, strong) NSString *streamName;
 @property (nonatomic, weak) id<PBNewPostViewDelegate> delegate;
 
 - (void) subscribeToKeyboardNotifications;

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'PBUIStreamDetails'
-  s.version          = '1.2.2.1'
+  s.version          = '1.3.1.1'
   s.summary          = 'Pod used to show Stream Details in Photo Butler apps.'
   
   s.description      = <<-DESC
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   
   s.ios.deployment_target = '9.3'
   s.platform = :ios, '9.3'
-  s.swift_version = '4.1'
+  s.swift_version = '4.2'
   
   s.ios.vendored_frameworks = 'PBFrameworkUIStreamDetails.framework'
   
@@ -22,8 +22,6 @@ Pod::Spec.new do |s|
   
   s.ios.frameworks = 'Foundation', 'CoreGraphics', 'AdSupport', 'UIKit', 'SystemConfiguration'
   
-  s.dependency "FBSDKCoreKit"
-  s.dependency "FBSDKShareKit"
   s.dependency "PBUIImageCarousel"
   s.dependency "PBServices"
   s.dependency "PBAnalytics"
