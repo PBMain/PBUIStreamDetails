@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-#import "PBPodUILibraries_UmbHeader.h"
+@protocol JPSImagePickerDelegate;
 
 @interface CameraControllerViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate, JPSImagePickerDelegate> {
     

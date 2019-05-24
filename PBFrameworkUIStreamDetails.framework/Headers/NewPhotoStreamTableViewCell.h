@@ -34,8 +34,10 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgSignalHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgSignalTopOffset;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *streamDurationViewHeight;
 
 @property (nonatomic, assign) BOOL needToDisplayImgSignal;
+@property (nonatomic, assign) BOOL isStreamDurationViewHidden;
 
 
 @end

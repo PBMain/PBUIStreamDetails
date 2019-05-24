@@ -19,7 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *vCheckBackground;
 @property (weak, nonatomic) IBOutlet UIView *vSelectedBG;
-
+@property (weak, nonatomic) IBOutlet UIView *vCheckInternalBG;
 
 
 @property (nonatomic) BOOL isAutoContributeButton;

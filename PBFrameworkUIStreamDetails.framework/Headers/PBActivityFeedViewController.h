@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) NSString *photoStreamId;
 @property (nonatomic) NSString *albumName;
-
+@property (nonatomic) NSDate *startDate;
+@property (nonatomic) NSDate *endDate;
 
 @end
 
