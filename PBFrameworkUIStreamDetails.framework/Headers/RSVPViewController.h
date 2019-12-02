@@ -3,7 +3,7 @@
 //  PhotoButler
 //
 //  Created by Mirant on 02/03/17.
-//  Copyright © 2017 blurbIQ. All rights reserved.
+//  Copyright © 2017 Photo Butler. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -11,7 +11,6 @@
 #import "OptInModeSelectionView.h"
 
 @interface RSVPViewController : UIViewController <OneButtonMenuDelegate, OptInModeSelectionDelegate> {
-    IBOutlet UIImageView *imgLine1;
     IBOutlet UIImageView *imgLine2;
 }
 
@@ -37,6 +36,7 @@
 
 @property (retain,nonatomic) IBOutlet UIView *viewMain;
 @property (retain,nonatomic) IBOutlet UIView *viewForRSVP;
+@property (retain,nonatomic) IBOutlet UIView *viewForOneButtonMenu;
 @property (retain,nonatomic) IBOutlet UIButton *btnContributeMenu;
 @property (retain,nonatomic) IBOutlet UIView *viewOrangeCircle;
 @property (retain,nonatomic) IBOutlet UIView *viewInfoBubble;

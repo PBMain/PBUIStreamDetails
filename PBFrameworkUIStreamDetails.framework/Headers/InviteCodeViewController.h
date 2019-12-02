@@ -3,12 +3,12 @@
 //  PhotoButler
 //
 //  Created by Mirant on 02/03/17.
-//  Copyright © 2017 blurbIQ. All rights reserved.
+//  Copyright © 2017 Photo Butler. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-
-@interface InviteCodeViewController : UIViewController<UITextFieldDelegate>{
+#import "QRScannerViewController.h"
+@interface InviteCodeViewController : UIViewController<UITextFieldDelegate, QRScannerProtocol>{
     IBOutlet UIImageView *imgConfetti;
     IBOutlet UIImageView *imgLogo;
 }
@@ -22,6 +22,7 @@
 @property (retain,nonatomic) IBOutlet UITextField *txtSecretCode;
 @property (retain,nonatomic) IBOutlet UIView *viewForNavigation;
 @property (retain,nonatomic) IBOutlet UIView *viewSafeArea;
+@property (weak, nonatomic) IBOutlet UIButton *btnScanQRCode;
 
 @property (nonatomic) NSString *folderID;
 

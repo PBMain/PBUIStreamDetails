@@ -3,7 +3,7 @@
 //  PhotoButler
 //
 //  Created by Daniel Spencer on 5/4/16.
-//  Copyright © 2016 blurbIQ. All rights reserved.
+//  Copyright © 2016 Photo Butler. All rights reserved.
 //
 
 // Takes a square image and makes it into a circle

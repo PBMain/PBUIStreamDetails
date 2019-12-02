@@ -3,7 +3,7 @@
 //  PhotoButler
 //
 //  Created by Mirant on 16/05/17.
-//  Copyright © 2017 blurbIQ. All rights reserved.
+//  Copyright © 2017 Photo Butler. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -8,10 +8,9 @@
 #import <UIKit/UIKit.h>
 
 #import "PhotoAlbumViewController.h"
-#import "PBPodUIImageCarousel_UmbHeader.h"
 #import "PBPodUILibraries_UmbHeader.h"
 
-#import "PBMainNavigationView.h"
+@class PBMainNavigationView;
 
 NS_ASSUME_NONNULL_BEGIN
 

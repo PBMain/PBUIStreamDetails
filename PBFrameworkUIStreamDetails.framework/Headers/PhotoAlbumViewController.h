@@ -30,7 +30,10 @@
 -(void)addExistingPersonView:(id)person;
 @end
 
-@interface PhotoAlbumViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, MKMapViewDelegate, CustomStreamCoverMenuDelegate, CustomCoverCameraDelegate, TOCropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ChooseImageFromStreamDelegate, OptInViewDelegate, OptInModeSelectionDelegate, YMSPhotoPickerViewControllerDelegate, OneButtonMenuDelegate, CustomParkMapCellProtocol> {
+@interface PhotoAlbumViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, MKMapViewDelegate, TOCropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, OptInViewDelegate, OptInModeSelectionDelegate, YMSPhotoPickerViewControllerDelegate, OneButtonMenuDelegate, CustomParkMapCellProtocol>
+//Unused Delegates
+//CustomStreamCoverMenuDelegate, CustomCoverCameraDelegate, ChooseImageFromStreamDelegate
+{
     IBOutlet UIView *viewNavigation;
     IBOutlet UIView *viewNavigationSafeArea;
     
@@ -123,6 +126,9 @@
 
 @property (nonatomic) int peopleInvited;
 @property (nonatomic) int peopleViewed;
+
+@property (nonatomic) BOOL isDownloadingZIP;
+
 @property (retain,nonatomic) NSMutableDictionary *imgHero;
 /** @property arrayPeopleSeen
  *   @brief It contains array of dictionaries.
@@ -154,9 +160,11 @@
 @property (nonatomic) int tickCountBlackoutChecker;
 @property (nonatomic) UIView *viewPopup;
 @property (nonatomic) UIView *viewPoweredByPB;
+@property (nonatomic) UIView *viewCoverBackgroundVideoStories;
 @property (atomic) NSRecursiveLock *dragRefreshLock;
 @property (atomic) NSRecursiveLock *lockRefreshArray;
 @property (atomic) NSLock *lockGetImagesFromDB;
+@property (atomic) NSLock *lockTickingTimer;
 @property (atomic) NSLock *lockReloadWhileUploading;
 @property (atomic) NSLock *lockLoadVisibleCells;
 @property (atomic) NSLock *lockRefreshingFromSocket;
@@ -216,6 +224,12 @@
 @property (nonatomic) BOOL isReloadingHighlightsForExpiredImages;
 @property (nonatomic) BOOL isReloadingPhotosForExpiredImages;
 @property (nonatomic) float expiredHighlightsReloadLength;
+
+// Tick count
+@property (nonatomic) int tickCount;
+
+// Video stories
+@property (nonatomic) BOOL hasStartedLoadedTheme;
 
 - (void) timerTick;
 - (void) beContributorAction;
@@ -315,6 +329,7 @@
 
 @property (nonatomic) UIImage *coverImage;
 @property (nonatomic) NSString *coverImageURL;
+@property (nonatomic) BOOL recentlySetCustomCover;
 
 // Folder information
 @property (nonatomic) NSDictionary *folder;
