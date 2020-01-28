@@ -10,7 +10,7 @@ FOUNDATION_EXPORT const unsigned char PBFrameworkUIStreamDetailsVersionString[];
 #import <PBFrameworkUIStreamDetails/MainPhotoAlbumCollectionViewCell.h>
 #import <PBFrameworkUIStreamDetails/YMSAlbumPickerViewController.h>
 #import <PBFrameworkUIStreamDetails/LoadMoreEllipsisCollectionReusableView.h>
-#import <PBFrameworkUIStreamDetails/PBPodUIImageCarousel_UmbHeader.h>
+#import <PBFrameworkUIStreamDetails/PBFrameworkUIImageCarousel_UmbHeader.h>
 #import <PBFrameworkUIStreamDetails/EnvelopViewForOtpInCell.h>
 #import <PBFrameworkUIStreamDetails/PhotoStreamCollectionViewCell.h>
 #import <PBFrameworkUIStreamDetails/YMSPhotoPickerTheme.h>
@@ -42,14 +42,14 @@ FOUNDATION_EXPORT const unsigned char PBFrameworkUIStreamDetailsVersionString[];
 #import <PBFrameworkUIStreamDetails/UIViewController+YMSPhotoHelper.h>
 #import <PBFrameworkUIStreamDetails/InviteStreamPhotoTableViewCell.h>
 #import <PBFrameworkUIStreamDetails/YMSVideoCell.h>
-#import <PBFrameworkUIStreamDetails/PBPodAnalytics_UmbHeader.h>
+#import <PBFrameworkUIStreamDetails/PBFrameworkAnalytics_UmbHeader.h>
 #import <PBFrameworkUIStreamDetails/PhotoSelectionCollectionViewCell.h>
 #import <PBFrameworkUIStreamDetails/GotAnInviteCode.h>
 #import <PBFrameworkUIStreamDetails/YMSSingleMediaTransition.h>
 #import <PBFrameworkUIStreamDetails/PhotoButlerStreamDetails.h>
 #import <PBFrameworkUIStreamDetails/EditStreamDetailsViewController.h>
 #import <PBFrameworkUIStreamDetails/CustomCoverCameraViewController.h>
-#import <PBFrameworkUIStreamDetails/PBPodUILibraries_UmbHeader.h>
+#import <PBFrameworkUIStreamDetails/PBFrameworkUILibraries_UmbHeader.h>
 #import <PBFrameworkUIStreamDetails/ContactTableViewCell.h>
 #import <PBFrameworkUIStreamDetails/StreamSortOptions.h>
 #import <PBFrameworkUIStreamDetails/CollaborateStream.h>
@@ -61,7 +61,7 @@ FOUNDATION_EXPORT const unsigned char PBFrameworkUIStreamDetailsVersionString[];
 #import <PBFrameworkUIStreamDetails/OptInAutomaticInfo.h>
 #import <PBFrameworkUIStreamDetails/UITableViewCell+YMSConfig.h>
 #import <PBFrameworkUIStreamDetails/PhotoAlbumViewController.h>
-#import <PBFrameworkUIStreamDetails/PBPodServices_UmbHeader.h>
+#import <PBFrameworkUIStreamDetails/PBFrameworkServices_UmbHeader.h>
 #import <PBFrameworkUIStreamDetails/YMSPlayerPreviewView.h>
 #import <PBFrameworkUIStreamDetails/CustomBullet.h>
 #import <PBFrameworkUIStreamDetails/InviteStreamPhotoCollectionViewCell.h>
