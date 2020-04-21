@@ -23,7 +23,7 @@
 #import <PBFrameworkServices/GlobalVars.h>
 #import <PBFrameworkServices/LocationServices.h>
 #import <PBFrameworkServices/NSString+RemoveEmoji.h>
-#import <PBFrameworkServices/PBPodServices.h>
+#import <PBFrameworkServices/PBFrameworkServices.h>
 #import <PBFrameworkServices/ReinstallFunctions.h>
 #import <PBFrameworkServices/Services.h>
 #import <PBFrameworkServices/ServicesAssets.h>
