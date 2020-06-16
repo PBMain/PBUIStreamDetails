@@ -13,6 +13,7 @@
 #import "UIViewController+YMSPhotoHelper.h"
 #import "OneButtonMenu.h"
 #import "CustomParkMapCell.h"
+#import "ChangeBGChooseBackgroundViewController.h"
 
 #import <TOCropViewController/TOCropViewController.h>
 
@@ -30,7 +31,7 @@
 -(void)addExistingPersonView:(id)person;
 @end
 
-@interface PhotoAlbumViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, MKMapViewDelegate, TOCropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, OptInViewDelegate, OptInModeSelectionDelegate, YMSPhotoPickerViewControllerDelegate, OneButtonMenuDelegate, CustomParkMapCellProtocol>
+@interface PhotoAlbumViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, MKMapViewDelegate, TOCropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, OptInViewDelegate, OptInModeSelectionDelegate, YMSPhotoPickerViewControllerDelegate, OneButtonMenuDelegate, CustomParkMapCellProtocol, ChangeBGChooseBackgroundDelegate>
 //Unused Delegates
 //CustomStreamCoverMenuDelegate, CustomCoverCameraDelegate, ChooseImageFromStreamDelegate
 {

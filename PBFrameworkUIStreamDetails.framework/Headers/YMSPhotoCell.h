@@ -22,6 +22,12 @@
 @property (nonatomic, strong) UIImage *thumbnailImage;
 
 /**
+* @brief Set thumbnail image view to this to display on cell.
+*
+*/
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+
+/**
  * @brief It is the identifier for photo picker to display single photo in current album.
  *
  */
