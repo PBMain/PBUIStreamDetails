@@ -23,6 +23,7 @@
 @property (nonatomic) NSString *categoryID;
 @property (nonatomic) BOOL isHighlights;
 @property (nonatomic) BOOL isAllPhotos;
+@property (nonatomic) BOOL isCategories;
 @property (nonatomic) int pagesLoaded;
 @property (nonatomic) int assetCount;
 @property (nonatomic) BOOL isHost;

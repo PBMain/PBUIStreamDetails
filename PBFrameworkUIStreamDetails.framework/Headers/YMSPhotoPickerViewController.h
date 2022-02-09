@@ -23,6 +23,8 @@
 
 @property (nonatomic, strong) NSMutableArray *selectedPhotos;
 
+@property (nonatomic, strong) NSString *mainTitle;
+
 /**
  * @brief Assign a delegate owner for YMSPhotoPickerViewController. It will notify you when YMSPhotoPickerViewController receives access denied or finish interaction with user.
  *
@@ -34,6 +36,8 @@
  *
  */
 @property (nonatomic, assign) NSUInteger numberOfMediaToSelect;
+
+@property (nonatomic, assign) NSUInteger minimumNumberOfMedeiaToSelect;
 
 /**
  * @brief Use YMSPhotoPickerTheme to customize the UI appearance for YMSPhotoPickerViewController, YMSSingleMediaViewController, and YMSAlbumPickerViewController. See YMSPhotoPickerTheme.h for more details.

@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id <TutorialDelegate> delegate;
 
 - (void) dismissAll;
++ (BOOL) didShowTutorial;
++ (void) setDidShowConstant;
 
 @end
 

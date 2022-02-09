@@ -40,6 +40,12 @@
 @property (nonatomic, strong) UIColor *orderTintColor;
 
 /**
+* @brief Describe a specific UIColor that you want to apply on selected photo cell border and order badge background color when minimum amount of photos is reached.
+*
+*/
+@property (nonatomic, strong) UIColor *orderReadyTintColor;
+
+/**
  * @brief Describe a specific UIColor that you want to apply on selected photo cell order number text color.
  *
  */

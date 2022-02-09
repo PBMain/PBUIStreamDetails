@@ -25,13 +25,15 @@
 
 @class LocationServicesDeniedView;
 
+@protocol ImageDetailViewControllerDelegate;
+
 @protocol PhotoAlbumViewControllerDelegate <NSObject>
 -(void)addViewPhotoController:(id)person fromStream : (NSString *)album;
 -(void)addNewPersonView:(id)person;
 -(void)addExistingPersonView:(id)person;
 @end
 
-@interface PhotoAlbumViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, MKMapViewDelegate, TOCropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, OptInViewDelegate, OptInModeSelectionDelegate, YMSPhotoPickerViewControllerDelegate, OneButtonMenuDelegate, CustomParkMapCellProtocol, ChangeBGChooseBackgroundDelegate>
+@interface PhotoAlbumViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, MKMapViewDelegate, TOCropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, OptInViewDelegate, OptInModeSelectionDelegate, YMSPhotoPickerViewControllerDelegate, OneButtonMenuDelegate, CustomParkMapCellProtocol, ChangeBGChooseBackgroundDelegate, ImageDetailViewControllerDelegate>
 //Unused Delegates
 //CustomStreamCoverMenuDelegate, CustomCoverCameraDelegate, ChooseImageFromStreamDelegate
 {
@@ -74,7 +76,7 @@
 @property (nonatomic) BOOL isNavigateUser;
 @property (nonatomic) BOOL hasLoadedFromServer;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *hightCheckManage;
-@property (retain,nonatomic) IBOutlet UICollectionView *colvMainForData;
+@property (weak,nonatomic) IBOutlet UICollectionView *colvMainForData;
 @property (nonatomic) NSString *albumID;
 @property (nonatomic) NSString *albumSharedID;
 @property (nonatomic) NSString *albumName;
@@ -130,7 +132,6 @@
 
 @property (nonatomic) BOOL isDownloadingZIP;
 
-@property (retain,nonatomic) NSMutableDictionary *imgHero;
 /** @property arrayPeopleSeen
  *   @brief It contains array of dictionaries.
  *   Exapmle: @{@"peopleCategoryName" : "listOfPeopleInThisCategory"} **/
@@ -180,11 +181,11 @@
 @property (nonatomic) NSString* showOnLoadFilename;
 @property (nonatomic) NSString* showOnLoadCreationDate;
 
-@property (retain,nonatomic) IBOutlet UILabel *lblTitle;
-@property (retain,nonatomic) IBOutlet UILabel *lblTimeLeft;
-@property (retain,nonatomic) IBOutlet UIButton *btnEditParams;
-@property (retain,nonatomic) IBOutlet UIButton *btnShare;
-@property (retain,nonatomic) IBOutlet UIButton *btnBack;
+@property (weak,nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak,nonatomic) IBOutlet UILabel *lblTimeLeft;
+@property (weak,nonatomic) IBOutlet UIButton *btnEditParams;
+@property (weak,nonatomic) IBOutlet UIButton *btnShare;
+@property (weak,nonatomic) IBOutlet UIButton *btnBack;
 @property (nonatomic) id <PhotoAlbumViewControllerDelegate> delegate;
 @property (nonatomic) CGPoint totalTranslation;
 @property (nonatomic) NSMutableString *locationCities;
@@ -234,7 +235,20 @@
 
 - (void) timerTick;
 - (void) beContributorAction;
-- (void) addImageDetailView:(NSMutableArray*) filenames selected:(NSDictionary*)selectedImage locationName:(NSString*)location subtitle:(NSString*)subtitle shouldUnhideToolbarOnExit:(BOOL)shouldUnhideToolbarOnExit albumId:(NSString*)albumId albumName:(NSString*)albumName;
+
+-(void) addImageDetailView:(NSMutableArray*) filenames
+                  selected:(NSDictionary*)selectedImage
+              locationName:(NSString*)location subtitle:(NSString*)subtitle
+ shouldUnhideToolbarOnExit:(BOOL)shouldUnhideToolbarOnExit
+                   albumId:(NSString*)albumId
+                 albumName:(NSString*)albumName
+              isHighlights:(BOOL)isHighlights
+              isCategories:(BOOL)isCategories
+               isAllPhotos:(BOOL)isAllPhotos
+            isPersonImages:(BOOL)isPersonImages
+                isMyImages:(BOOL)isMyImages;
+
++(PhotoAlbumViewController*) createWithInviteCode:(NSString *)inviteCode;
 -(void) getAlbumInformation;
 -(void) getAlbumInformationChanges;
 -(void) pressStop;
@@ -265,18 +279,18 @@
 @property (nonatomic) BOOL isFromUpcoming;
 @property (nonatomic) BOOL isOptIn;
 
-@property (retain,nonatomic) IBOutlet UIView *viewContributeOptIn;
-@property (retain,nonatomic) IBOutlet UIView *viewHostOptInDisplay;
-@property (retain,nonatomic) IBOutlet UIButton *btnContributeClose;
+@property (weak,nonatomic) IBOutlet UIView *viewContributeOptIn;
+@property (weak,nonatomic) IBOutlet UIView *viewHostOptInDisplay;
+@property (weak,nonatomic) IBOutlet UIButton *btnContributeClose;
 
-@property (retain,nonatomic) IBOutlet UILabel *lblHostInstTitle;
-@property (retain,nonatomic) IBOutlet UILabel *lblHostInstTime;
-@property (retain,nonatomic) IBOutlet UIView *viewHostInstProfileIcon;
-@property (retain,nonatomic) IBOutlet UIImageView *imgHostInstProfileIcon;
-@property (retain,nonatomic) IBOutlet UIView *viewHostInstStopIcon;
+@property (weak,nonatomic) IBOutlet UILabel *lblHostInstTitle;
+@property (weak,nonatomic) IBOutlet UILabel *lblHostInstTime;
+@property (weak,nonatomic) IBOutlet UIView *viewHostInstProfileIcon;
+@property (weak,nonatomic) IBOutlet UIImageView *imgHostInstProfileIcon;
+@property (weak,nonatomic) IBOutlet UIView *viewHostInstStopIcon;
 
-@property (retain,nonatomic) IBOutlet UIView *viewContributorOptInDisplay;
-@property (retain,nonatomic) IBOutlet UIPageControl *pageControllerContributor;
+@property (weak,nonatomic) IBOutlet UIView *viewContributorOptInDisplay;
+@property (weak,nonatomic) IBOutlet UIPageControl *pageControllerContributor;
 @property (nonatomic) OptInView *vOptIn;
 @property (nonatomic) OptInModeSelectionView *vOptInModeSelect;
 
@@ -302,12 +316,12 @@
 @property (nonatomic) LocationServicesDeniedView *lsdv;
 
 // Camera / Audience bar
-@property (nonatomic) IBOutlet UIView *viewCamera;
-@property (nonatomic) IBOutlet UIView *viewAudience;
-@property (nonatomic) IBOutlet UIView *viewStop;
-@property (nonatomic) IBOutlet UIView *viewStopRightSeparator;
-@property (nonatomic) IBOutlet NSLayoutConstraint *constraintViewStopWidth;
-@property (nonatomic) IBOutlet NSLayoutConstraint *constraintViewAudienceWidth;
+@property (nonatomic, weak) IBOutlet UIView *viewCamera;
+@property (nonatomic, weak) IBOutlet UIView *viewAudience;
+@property (nonatomic, weak) IBOutlet UIView *viewStop;
+@property (nonatomic, weak) IBOutlet UIView *viewStopRightSeparator;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *constraintViewStopWidth;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *constraintViewAudienceWidth;
 
 // Customization
 @property (nonatomic) NSString *peopleHeaderText;
@@ -322,9 +336,9 @@
 @property (nonatomic) NSMutableArray *queueAllPhotosDoneNewToOld;
 
 // One Button Menu
-@property (nonatomic) IBOutlet UIImageView *imgOneButtonMenuImage;
-@property (nonatomic) IBOutlet UIView *vOneButtonMenuInnerContainer;
-@property (nonatomic) IBOutlet UIImageView *imgOneButtonMenuInner;
+@property (nonatomic, weak) IBOutlet UIImageView *imgOneButtonMenuImage;
+@property (nonatomic, weak) IBOutlet UIView *vOneButtonMenuInnerContainer;
+@property (nonatomic, weak) IBOutlet UIImageView *imgOneButtonMenuInner;
 -(IBAction)pressOneButtonMenu:(id)sender;
 -(IBAction)pressMagicCoverVideoButton:(id)sender;
 
@@ -335,10 +349,13 @@
 // Folder information
 @property (nonatomic) NSDictionary *folder;
 // Folder logo
-@property (nonatomic) IBOutlet UIImageView *imgFolderLogoInHeader;
+@property (nonatomic, weak) IBOutlet UIImageView *imgFolderLogoInHeader;
 
 // Cover image icon and video
 @property (nonatomic) NSString *coverVideoURL;
 @property (nonatomic) NSString *coverVideoIconURL;
+
+// For other views navigating away from this one without telling us
+-(void) prepareForRemoval;
 
 @end

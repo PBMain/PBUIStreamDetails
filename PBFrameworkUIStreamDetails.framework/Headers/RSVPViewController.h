@@ -31,6 +31,7 @@
 @property (nonatomic) UIImage *coverImage;
 
 @property (retain,nonatomic) NSTimer *timerClock;
+@property (retain,nonatomic) NSTimer *timerRefreshStream;
 
 @property (nonatomic) BOOL canPressConfirm;
 
@@ -73,5 +74,7 @@
 @property (nonatomic) int tickCount;
 
 -(void)hideMethod;
+
+-(void) prepareForRemoval;
 
 @end

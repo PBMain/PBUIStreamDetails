@@ -48,6 +48,14 @@ typedef NS_ENUM(NSInteger, StreamType) {
 @property (nonatomic, assign) StreamType currentState;
 @property (weak, nonatomic) IBOutlet UILabel *lblScheduledStreamTime;
 @property (weak, nonatomic) IBOutlet UIView *viewShortenExtendContainer;
+// The lines that go around the lengthen/shorten buttons
+@property (weak, nonatomic) IBOutlet UIView *viewShortenExtendLineExtendTop;
+@property (weak, nonatomic) IBOutlet UIView *viewShortenExtendLineExtendBottom;
+@property (weak, nonatomic) IBOutlet UIView *viewShortenExtendLineShortenTop;
+@property (weak, nonatomic) IBOutlet UIView *viewShortenExtendLineShortenBottom;
+@property (weak, nonatomic) IBOutlet UIView *viewShortenExtendLineCenter;
+@property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *collectionShortenExtendLineThickness;
+
 @property (weak, nonatomic) IBOutlet UILabel *lblCurrentStreamTime;
 @property (weak, nonatomic) IBOutlet UIButton *btnExtend;
 @property (weak, nonatomic) IBOutlet UIButton *btnChooseNewCover;

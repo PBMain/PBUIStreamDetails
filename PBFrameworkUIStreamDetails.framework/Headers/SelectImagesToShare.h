@@ -49,4 +49,6 @@
 @property (nonatomic) NSMutableArray *arrayVideoAssetIDs;
 @property (nonatomic) NSMutableArray *arrayImageAssetIDs;
 
+@property (nonatomic) UIActivityViewController *activityViewController;
+
 @end

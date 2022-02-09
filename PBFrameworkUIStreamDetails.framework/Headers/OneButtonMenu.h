@@ -13,6 +13,10 @@
 -(void) openAutomaticContribution;
 -(void) openManualContribution;
 -(void) createVideoStory;
+-(void) createCinemajor;
+-(void) openFITS;
+-(void) openARExperience;
+
 @end
 
 @interface OneButtonMenu : UIView
@@ -35,6 +39,7 @@ typedef NS_ENUM(NSUInteger, CTA_Type) {
 
 @property (weak, nonatomic) IBOutlet UIButton *btnManualUpload;
 @property (weak, nonatomic) IBOutlet UIButton *btnCreateVideoStory;
+@property (weak, nonatomic) IBOutlet UIButton *btnCreateCinemajor;
 
 @property (nonatomic) IBOutlet UIImageView *imgLeaveEditStream;
 @property (nonatomic) IBOutlet UIImageView *imgShare;
@@ -48,6 +53,9 @@ typedef NS_ENUM(NSUInteger, CTA_Type) {
 @property (nonatomic) IBOutlet UILabel *lblAutoUpload;
 @property (nonatomic) IBOutlet UILabel *lblManualUpload;
 @property (nonatomic) IBOutlet UILabel *lblCreateVideoStory;
+@property (nonatomic) IBOutlet UILabel *lblCreateCinemajor;
+@property (nonatomic) IBOutlet UILabel *lblCreateFITSImage;
+@property (nonatomic) IBOutlet UILabel *lblARExperience;
 @property (nonatomic) IBOutlet UIButton *btnCancel;
 @property (nonatomic) IBOutlet UIView *vCallsToAction;
 @property (nonatomic) IBOutlet UIView *vButtonsWhiteBackground;
@@ -57,12 +65,22 @@ typedef NS_ENUM(NSUInteger, CTA_Type) {
 @property (nonatomic) IBOutlet UIView *vbManualUpload;
 @property (nonatomic) IBOutlet UIView *vbSaveShare;
 @property (nonatomic) IBOutlet UIView *vbEditLeave;
+@property (nonatomic) IBOutlet UIView *vbCreateCinemajor;
+@property (nonatomic) IBOutlet UIView *vbCreateCinemini;
+@property (nonatomic) IBOutlet UIView *vbFITS;
+@property (nonatomic) IBOutlet UIView *vbARExperience;
+
 @property (nonatomic) IBOutletCollection(UIView) NSArray *arrayButtonImageContainers;
 @property (nonatomic) IBOutletCollection(UIImageView) NSArray *arrayButtonImages;
 @property (nonatomic) IBOutlet NSLayoutConstraint *lcButtonsWhiteBackgroundHeight;
 @property (nonatomic) IBOutlet NSLayoutConstraint *lcCallToActionContainerHeight;
 @property (nonatomic) IBOutlet NSLayoutConstraint *lcGrayBackgroundHeight;
 @property (nonatomic) IBOutlet NSLayoutConstraint *lcCreateVideoStoryHeight;
+@property (nonatomic) IBOutlet NSLayoutConstraint *lcCreateCinemajorHeight;
+@property (nonatomic) IBOutlet NSLayoutConstraint *lcCreateCineminiHeight;
+@property (nonatomic) IBOutlet NSLayoutConstraint *lcFITSHeight;
+@property (nonatomic) IBOutlet NSLayoutConstraint *lcARExperienceHeight;
+
 @property (nonatomic) IBOutlet NSLayoutConstraint *lcSharePhotosHeight;
 @property (nonatomic) IBOutlet NSLayoutConstraint *lcManualHeight;
 @property (nonatomic) IBOutlet NSLayoutConstraint *lcAutomaticHeight;
@@ -79,6 +97,10 @@ typedef NS_ENUM(NSUInteger, CTA_Type) {
 -(void) setIsUpcoming:(BOOL)isUpcoming;
 -(void) setHasPhotos:(BOOL)hasPhotos;
 -(void) setHasVideoStory:(BOOL)hasVideoStory;
+-(void) setHasCinemajor:(BOOL)hasCinemajor;
+-(void) setHasCinemini:(BOOL)hasCinemini;
+-(void) setHasFITS:(BOOL)hasFITS;
+-(void) setHasARExperience:(BOOL)hasARExperience;
 
 -(void) showContributionEnvelope;
 -(void) contributionPause;

@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // Image of placeholder with tuxguy and the set background
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewPlaceholder;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewPlaceholderSuitman;
 
 // View that contains the tuxguy and settable background
 @property (weak, nonatomic) IBOutlet UIView *viewPreviewContainer;
@@ -43,6 +44,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintScrollViewAspectRatio;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintUGCBackgroundHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintUGCBackgroundWidth;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintBackgroundAspectRatio;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintBackgroundMaxHeight;
+
+// View that contains the overlay logo if there is one
+@property (weak, nonatomic) IBOutlet UIView *viewOverlayContainer;
 
 // Divider view between CollectionView and the Adjustable UGC area
 @property (weak, nonatomic) IBOutlet UIView *viewDivider;
@@ -67,6 +74,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) PHAsset *selectedUserImage;
 @property (nonatomic) NSString *streamID;
+@property (nonatomic) NSString *orientation;
 @property (nonatomic) NSArray *backgroundImages;
 @property (nonatomic, nullable) NSDictionary *selectedBackground;
 @property (nonatomic, nullable) NSString *resultImageURL;
@@ -80,6 +88,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 // timeout timer for connections
 @property (nonatomic, nullable) NSTimer *timerTimeout;
+
+// Helper params that just store the information about the overlay image position, so we don't have to recalc it ever
+@property (nonatomic) NSString *imageURL;
+@property (nonatomic) BOOL overlayIsLeft;
+@property (nonatomic) BOOL overlayIsTop;
+@property (nonatomic) BOOL overlayIsHCenter;
+@property (nonatomic) BOOL overlayIsVCenter;
+@property (nonatomic) CGFloat overlayXPos;
+@property (nonatomic) CGFloat overlayYPos;
+// How much the images are scaled down to fit into the views
+@property (nonatomic) CGFloat scaleDown;
 
 @end
 

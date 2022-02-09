@@ -19,5 +19,6 @@
  *
  */
 @property (nonatomic, readonly) AVCaptureSession *session;
+@property (nonatomic) BOOL selfieCamera;
 
 @end

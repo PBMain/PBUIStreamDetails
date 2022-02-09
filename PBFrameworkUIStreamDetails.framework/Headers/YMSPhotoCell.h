@@ -45,6 +45,8 @@
  */
 @property (nonatomic, assign) NSUInteger selectionOrder;
 
+@property (nonatomic, strong) UIColor *selectionTintColor;
+
 /**
  * @brief Load the photo from photo library and display it on cell.
  *
@@ -66,5 +68,7 @@
  * @param highlighted The animation type for highlighted and unhighlighted.
  */
 - (void)animateHighlight:(BOOL)highlighted;
+
+- (void) updateSelectionTint;
 
 @end

@@ -25,10 +25,12 @@
 @property (nonatomic) NSLock *lockDragRefresh;
 
 // POI View
-@property (nonatomic) IBOutlet UIImageView *imgFace;
-@property (nonatomic) IBOutlet UILabel *lblEmpty;
+@property (nonatomic, weak) IBOutlet UIImageView *imgFace;
+@property (nonatomic, weak) IBOutlet UILabel *lblEmpty;
 @property (nonatomic) NSDictionary *poi;
-@property (nonatomic) IBOutlet UIButton *btnSave;
+@property (nonatomic, weak) IBOutlet UIButton *btnSave;
+@property (nonatomic, weak) IBOutlet UIButton *btnDelete;
+
 -(IBAction) pressSave:(id)sender;
 
 // Picker
